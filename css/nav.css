@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+nav.scrolled {
+    background-color: white;
+    transition: background-color 200ms linear;
+    color: #878787;
+    box-shadow: 0 6px 15px rgba(134, 134, 134, 0.3);
+}
+nav i {
+    font-size: 16px;
+}
+nav ul:not(.dropdown_content) {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-align: center;
+}
+nav li.scrolled_li:hover {
+    background: var(--main-color-green);
+    color: white !important;
+}
+nav ul li:hover {
+    background: white;
+    color: var(--main-color-green);
+}
+nav a {
+    width: 150px;
+    height: 44px;
+    display: inline-block;
+    margin-right: 10px;
+    background-image: url("../img/Logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+nav a.scrolled_a {
+    background-image: url("../img/Logo-dark.png");
+}
+nav .left-part img {
+    width: 100%;
+    height: auto;
+}
+.right-part li:nth-child(1) {
+    border: 1px solid white;
+}
+.right-part li:nth-child(1).scrolled_li_right {
+    border-color: var(--main-color-green);
+}
+.dropdown {
+    position: relative;
+}
+.dropdown_content {
+    position: absolute;
+    left: -1px;
+    top: 40px;
+    display: none;
+    min-width: inherit;
+    padding: 0;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 1;
+}
+.drp_small {
+    min-width: 68.9px !important;
+}
+.dropdown_content li {
+    background: white;
+    color: black;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: normal;
+    border-color: transparent !important;
+}
+.dropdown_content:nth-child(2) li {
+    font-size: 11px;
+}
+.dropdown_content li:hover {
+    background: var(--main-color-green);
+    color: white;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+.mobile_size_bar {
+    display: none;
+    padding: 5px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.mobile_size_bar:hover {
+    background: rgb(185, 185, 185);
+}
+.mobile_size_bar i {
+    font-size: 22px;
+}
+@media (max-width: 1200px) {
+    nav ul li {
+        font-size: 10px;
+        padding: 10px 3px;
+    }
+    .dropdown_content {
+        top: 35px;
+    }
+    .drp_small {
+        min-width: 46.45px !important;
+    }
+    .nav_ul_right {
+        width: 265px;
+        justify-content: space-around;
+    }
+    .dropdown:nth-child(1) {
+        margin-top: 5px;
+    }
+    .nav_ul_right > li:nth-child(1){
+        order: 4;
+    }
+    .nav_ul_right > li:nth-child(1){
+        order: 1;
+    }
+    .nav_ul_right > li:nth-child(1){
+        order: 2;
+    }
+    .nav_ul_right > li:nth-child(1){
+        order: 3;
+    }
+}
+@media (max-width: 992px) {
+    nav a {
+        width: 92px;
+        height: 23.5px;
+    }
+    nav ul li {
+        font-size: 9px;
+    }
+    nav i {
+        font-size: 11px;
+    }
+    .dropdown:nth-child(1) {
+        padding: 6px 15px !important;
+        margin-top: 15px;
+    }
+    .dropdown_content:nth-child(2) li {
+        font-size: 10px;
+    }
+    .dropdown_content:nth-child(1) li {
+        font-size: 13px;
+    }
+    .dropdown_content {
+        top: 25px;
+    }
+    .nav_ul_right {
+        width: 200px;
+    }
+}
+@media (max-width: 860px) {
+    nav {
+        justify-content: space-between;
+        padding: 10px;
+    }
+}
+@media (max-width: 768px) {
+    nav {
+        padding-top: 20px;
+    }
+    .nav_ul_right {
+        display: none !important;
+    }
+    .nav_ul_left li {
+        display: none;
+    }
+    .mobile_size_bar {
+        display: block;
+    }
+    nav a {
+        width: 153px;
+        height: 39px;
+    }
+}

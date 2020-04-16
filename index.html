@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Armenian Job Portal | Jobs in armenia | Careers and Vacancies</title>
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/main_top.css" />
+    <link rel="stylesheet" href="./css/main_middle.css">
+    <link rel="stylesheet" href="./css/main_bottom.css">
+    <link rel="icon" type="image/png" href="./img/icon_small.png" />
+    <script src="https://kit.fontawesome.com/3b2712b7d9.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        :root {
+            --main-color-green: #669900;
+            --main-color-blue: #407BFF;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="left-part">
+            <ul class="nav_ul_left">
+                <a href="index.html"></a>
+                <li>jobs</li>
+                <li>trainings</li>
+                <li>companies</li>
+                <li>staffblog</li>
+            </ul>
+        </div>
+        <div class="right-part">
+            <ul class="nav_ul_right">
+                <li class="dropdown">for companies <i class="fas fa-sort-down">
+                    <ul class="dropdown_content">
+                        <li>Sign In</li>
+                        <li>Register</li>
+                        <li>Job Packages</li>
+                        <li>Training Packages</li>
+                    </ul>
+                </i>
+                </li>
+                <li onclick="showRegister()" id="register"><i class="fas fa-user"></i> register</li>
+                <li><i class="fas fa-sign-in-alt"></i> sign in</li>
+                <li class="dropdown">ENG <i class="fas fa-sort-down"></i>
+                    <ul class="dropdown_content drp_small">
+                        <li>РУС</li>
+                        <li>ՀԱՅ</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="mobile_size_bar">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <div id="register_container">
+        <div>
+            <i onclick="closeRegister()" style="cursor: pointer;" class="fas fa-times"></i>
+        </div>
+        <div class="register_btns">
+            <button>Register your account</button>
+            <button>Sign in to your account</button>
+        </div>
+        <div class="register_social-media">
+            <div class="register_media-content"><i class="fab fa-facebook-f"></i></div>
+            <div class="register_media-content"><i class="fab fa-linkedin-in"></i></div>
+            <div class="register_media-content"><i class="fab fa-google"></i></div>
+            <div class="register_media-content"><i class="fab fa-vk"></i></div>
+            <div class="register_media-content"><i class="fas fa-at"></i></div>
+        </div>
+        <form class="register_form-container">
+            <div class="input_container">
+                <label>First name</label>
+                <input type="text" name="firstname" placeholder="Please enter your name">
+            </div>
+            <div class="input_container">
+                <label>Last name</label>
+                <input type="text" name="lastname" placeholder="Please enter your last name">
+            </div>
+            <div class="input_container">
+                <label>Date of Birth</label>
+                <select>
+                    <option>Day</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <select>
+                    <option>Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                </select>
+                <select>
+                    <option>Year</option>
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                </select>
+            </div>
+            <div class="input_container">
+                <label>Email</label>
+                <input type="text" name="email" placeholder="Please enter your email">
+            </div>
+            <div class="input_container pass_container">
+                <label>Password</label>
+                <input id="password" type="password" name="password" placeholder="Please enter your password">
+                <div class="pass_percent_container">
+                    <input id="pass_percent" type="text" value="0%" name="percent" disabled="disabled">
+                    <input id="pass_security" type="text" value="not Set" name="security" disabled="disabled">
+                </div>
+            </div>
+            <div class="input_container">
+                <label>Please repeat your password</label>
+                <input type="password" name="repassword" placeholder="Please repeat your password">
+            </div>
+            <div class="robot_check_container">
+                <div class="square"></div>
+                <span class="not_robot">Я не робот</span>
+                <a class="howToUse" href="https://policies.google.com/privacy?hl=ru">Конфиденциальность -</a>
+                <a class="howToUse" href="https://policies.google.com/terms?hl=ru">Условия использования</a>
+                <img src="./img/logo_48.png" alt="logo-48">
+                <span class="robot_span">reСартсна</span>
+            </div>
+            <button class="register_form-btn" onclick="return false">register</button>
+            <span class="register_privacy_policy">
+                By creating an account, I agree to staff.am’s
+                <a href="https://staff.am/en/site/terms-of-use">Terms of Use</a> and
+                <a href="https://staff.am/en/site/privacy-policy">Privacy Policy</a>
+                and to receive emails.
+            </span>
+        </form>
+    </div>
+    <header>
+        <h1>Career search starts here</h1>
+        <h2>Search for jobs, find your match and apply with one click.<br />
+            Explore all our options now.
+        </h2>
+        <div class="filter_container">
+            <label class="filter_check">Jobs
+                <input type="radio" checked="checked" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="filter_check">Trainings
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="filter_check">Compaines
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>    
+            </label>
+            <form class="filter_form">
+                <input type="text" name="keywords" placeholder="All keywords">
+                <input list="categories" placeholder="All categories">
+                <datalist id="categories">
+                    <option value="All categories">
+                    <option value="Software Development">
+                    <option value="Web/Graphic Desiner">
+                </datalist>
+                <input list="cities" placeholder="All Cities">
+                <datalist id="cities">
+                    <option value="All Cities">
+                    <option value="Yerevan">
+                    <option value="Vanadzor">
+                    <option value="Gyumri">
+                </datalist>
+                <button class="filter_search_button" onclick="return false"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="container">
+            <div class="companyes_container">
+                <a onclick="return false" href="#">
+                    <img src="./img/09154795.png" alt="pic">
+                </a>
+                <a onclick="return false" href="#">
+                    <img src="./img/152d821e.png" alt="pic">
+                </a>
+                <a onclick="return false" href="#">
+                    <img src="./img/162685df.png" alt="pic">
+                </a>
+                <a onclick="return false" href="#">
+                    <img src="./img/411f36eb.png" alt="pic">
+                </a>
+                <a onclick="return false" href="#">
+                    <img src="./img/a401dd09.png" alt="pic">
+                </a>
+                <a onclick="return false" href="#">
+                    <img src="./img/af27833b.png" alt="pic">
+                </a>
+                <a onclick="return false" href="#">
+                    <img src="./img/b94d47c7.png" alt="pic">
+                </a>
+                <a onclick="return false" href="#">
+                    <img src="./img/ca663b3d.png" alt="pic">
+                </a>
+                <a onclick="return false" href="#">
+                    <img src="./img/162685df.png" alt="pic">
+                </a>
+            </div>
+        </div>
+        <div class="slide_container">
+            <div class="slide_circle"></div>
+            <div class="slide_circle"></div>
+            <div class="slide_circle"></div>
+            <div class="slide_circle"></div>
+            <div class="slide_circle"></div>
+        </div>
+    </header>
+    <section class="featured">
+        <h1 class="text_centered">featured companies</h1>
+        <div class="container featured_container">
+            <div class="companies_box">
+                <a class="company-image" href="#" onclick="return false"></a>
+                <div class="company_about">
+                    <h4>ԱյԴի Բանկ ՓԲԸ</h4>
+                    <span>Finance/Banking/Insurance</span>
+                    <span>
+                        <i class="fas fa-hourglass-half"></i>
+                        6 active jobs
+                    </span>
+                </div>
+                <div class="text-container">
+                    «ԱյԴի Բանկը» հիմնադրվել է 1990թ. օգոստոսի 1-ին թեթեւ
+                    արդյունաբերության ոլորտում գործող ձեռնարկությունների եւ
+                    կազմակերպությունների կողմից` որպես փայատիրական կոմերցիոն
+                    բանկ՝...
+                </div>
+                <div class="text_centered">
+                    <button class="view_btn">VIEW ALL</button>
+                </div>
+            </div>
+            <div class="companies_box">
+                <a class="company-image" href="#" onclick="return false"></a>
+                <div class="company_about">
+                    <h4>SecrviceTitan</h4>
+                    <span>Information technologies</span>
+                    <span>
+                        <i class="fas fa-hourglass-half"></i>
+                        3 active jobs
+                    </span>
+                </div>
+                <div class="text-container">
+                    ServiceTitan is a mobile, cloud-based software
+                    platform that helps Home Service companies streamline
+                    operations, improve customer service, and grow their
+                    business. We develop a backbone end-to-end solution
+                    for the multi-billion dollar Residential Home Service
+                    industry. Integrated CRM, intelligent dispatching,
+                    comprehensive...
+                </div>
+                <div class="text_centered">
+                    <button class="view_btn">VIEW ALL</button>
+                </div>
+            </div>
+            <div class="companies_box">
+                <a class="company-image" href="#" onclick="return false"></a>
+                <div class="company_about">
+                    <h4>Develandoo LLC</h4>
+                    <span>Information technologies</span>
+                    <span>
+                    <i class="fas fa-hourglass-half"></i>
+                        7 active jobs
+                    </span>
+                </div>
+                <div class="text-container">
+                    Founded in 2014, Develandoo is an AI Innovation
+                    Lab, specialized in building early-stage companies.
+                    We are experts in building products for global
+                    companies and startups. We have 5 branches around
+                    the world (Germany, Armenia, USA, Belarus and Mexico),
+                    30 products already launched and 100+ employees who
+                    form our strong team. In our ITaaS...
+                </div>
+                <div class="text_centered">
+                    <button class="view_btn">VIEW ALL</button>
+                </div>
+            </div>
+        </div>
+        <div style="width: 60px;" class="slide_container">
+            <div class="slide_circle"></div>
+            <div style="background: rgb(196, 196, 196);" class="slide_circle"></div>
+            <div style="background: rgb(196, 196, 196);" class="slide_circle"></div>
+        </div>
+    </section>
+    <section class="creating_container">
+        <div class="creating_img">
+            <img src="./img/122920dd.jpg" alt="creating">
+        </div>
+        <div class="creating_text">
+            <h1>Create a job-seeker profile today</h1>
+            <span>Finding your next job got easier with staff.am:</span>
+            <span class="creating_span">Create your user profile in seconds,</span>
+            <span class="creating_span">
+                Complete your profile and get noticed by
+                potential employers with StaffSearch Engine,
+            </span>
+            <span class="creating_span">
+                Take advantage of your user profile to
+                follows jobs, receive alerts, stay informed. 
+            </span>
+            <div style="text-align: right">
+                <button class="create_cv">Create online CV</button>
+            </div>
+        </div>
+    </section>
+    <section class="staff_mobileApp">
+        <div class="container mobileApp_container">
+            <div class="mobileApp_text">
+                <h1>Meet staff.am mobile app</h1>
+                <span>Browse jobs quickly and save your time.</span>
+                <span>Stay informed about new job opportunities and apply online.</span>
+                <span>Find a job to suit your professional background and career aspirations.</span>
+                <a href="https://apps.apple.com/am/app/staff-am/id1248999636"><img src="./img/apple.png" alt="appstore"></a>
+                <a href="https://play.google.com/store/apps/details?id=am.staff.androidapp&hl=en"><img src="./img/google_play.png" alt="googleplay"></a>
+            </div>
+            <div class="phone_img">
+                <img src="./img/phone.png" alt="phone">
+            </div>
+        </div>
+    </section>
+    <section class="staff_training">
+        <div class="container training_container">
+            <div class="training_img">
+                <img src="./img/trainings.png" alt="training">
+            </div>
+            <div class="training_about">
+                <h1>Professional trainings</h1>
+                <span>
+                    We offer job matching professional trainings
+                    from the leading local and international training providers.
+                    We ensure that a wide aspect of trainings are offered through
+                    our platform to suite our job-seeker’s needs.
+                </span>
+                <div class="training_btns">
+                    <button>Training packages</button>
+                    <button>Post a training</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="how_to_start">
+        <h1>how to start</h1>
+        <div class="container how_to_container">
+            <div class="how_to_content">
+                <div class="how_to_img">
+                <img src="./img/how_to_img1.png" alt="icon">          
+                </div>
+                <div class="how_to_text">
+                    Register your personal or company profile in seconds
+                </div>
+            </div>
+            <div class="how_to_content">
+                <div class="how_to_img">
+                    <img src="./img/how_to_img2.png" alt="icon">
+                </div>
+                <div class="how_to_text">
+                    Start searching for jobs and talent
+                </div>
+            </div>
+            <div class="how_to_content">
+                <div class="how_to_img">
+                    <img src="./img/how_to_img3.png" alt="icon">
+                </div>
+                <div class="how_to_text">
+                    Take advantage of our tools and resources for effective search
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="subscribe">
+        <div class="container subscribe_container">
+            <div class="subscribe_text">
+                <h1>Receive job alerts right on your mailbox</h1>
+                <span>Provide your email address and subscribe</span>
+            </div>
+            <div class="subscribe_form">
+                <form>
+                    <input class="sub_input" type="email" name="email" placeholder="Enter your email">
+                    <button class="sub_btn" onclick="return false">
+                        <i class="fab fa-telegram-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="latest">
+        <h1>Latest from our blog</h1>
+        <div class="container latest_container">
+            <div class="latest_content">
+                <img src="./img/latest_img_1.png" alt="latest-img">
+                <div class="latest_text">
+                    <span>Staff.am</span>
+                    <h3>Co-founders of staff.am - mentors at Sevan Startup Summit 2019</h3>
+                    <small>31 July 2019</small>
+                    <span>
+                        On July 29 and 30, the founders of staff.am
+                        #HRTech Career Platform, Louise Avetisyan and
+                        Vahe Avetisyan, were invited to share their
+                        practical experience through the Sevan Startup
+                        Summit 2019...
+                    </span>
+                </div>
+            </div>
+            <div class="latest_content">
+                <img src="./img/latest_img_2.png" alt="latest-img">
+                <div class="latest_text">
+                    <span>Motivation</span>
+                    <h3>How to motivate employers. 5 key ways to employees</h3>
+                    <small>19 July 2019</small>
+                    <span>
+                        staff.am online career platform always
+                        shares interesting materials and new trends...
+                    </span>
+                </div>
+            </div>
+            <div class="latest_content">
+                <img src="./img/latest_img_3.png" alt="latest-img">
+                <div class="latest_text">
+                    <span>Staff.am</span>
+                    <h3>How to search and get job with staff.am</h3>
+                    <small>22 June 2019</small>
+                    <span>It is time to review the ways of job searching</span>
+                </div>
+            </div>
+        </div>
+        <button class="latest_btn">View all</button>
+    </section>
+    <footer>
+        <div class="container footer_container">
+            <div class="contact_container">
+                <div class="footer_content">
+                    <div class="footer_row">
+                        <img src="./img/footer_logo.png" alt="footer-logo">
+                    </div>
+                    <div class="footer_row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>24 Azatutyan Ave, Yerevan, Armenia</span>
+                    </div>
+                    <div class="footer_row">
+                        <i class="fas fa-phone"></i>
+                        <span>+374 11 900 901</span>
+                    </div>
+                    <div class="footer_row">
+                        <i class="far fa-envelope-open"></i>
+                        <span>hello@staff.am</span>
+                    </div>
+                    <div class="footer_row">
+                        <div class="social_media_box">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="social_media_box">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="social_media_box">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="social_media_box">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="social_media_box">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="social_media_box">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="footer_row">
+                        <a href="https://apps.apple.com/am/app/staff-am/id1248999636">
+                            <img src="./img/apple.png" alt="appstore">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=am.staff.androidapp&hl=en">
+                            <img src="./img/google_play.png" alt="googleplay">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_map_container">
+                <div class="footer_content">
+                    <div class="footer_row"><h3>About</h3></div>
+                    <div class="footer_row"><a href="https://staff.am/en/about">Our mission</a></div>
+                    <div class="footer_row"><a href="https://staff.am/en/how-we-work">How we work</a></div>
+                    <div class="footer_row"><a href="https://staff.am/blog/">StaffBlog</a></div>
+                    <div class="footer_row"><a href="https://staff.am/en/privacy-policy">Privacy policy</a></div>
+                    <div class="footer_row"><a href="https://staff.am/en/terms-of-use">Terms of use</a></div>
+                </div>
+                <div class="footer_content">
+                    <div class="footer_row"><h3>Individuals</h3></div>
+                    <div class="footer_row"><a href="https://staff.am/en/about">Create online CV</a></div>
+                    <div class="footer_row"><a href="https://staff.am/en/how-we-work">Veiw all jobs</a></div>
+                    <div class="footer_row"><a href="https://staff.am/blog/">View all companies</a></div>
+                    <div class="footer_row"><a href="https://staff.am/en/privacy-policy">View all trainings</a></div>
+                </div>
+                <div class="footer_content">
+                    <div class="footer_row"><h3>Companies</h3></div>
+                    <div class="footer_row"><a href="https://staff.am/en/about">Register as employer</a></div>
+                    <div class="footer_row"><a href="https://staff.am/en/how-we-work">Veiw job packages</a></div>
+                    <div class="footer_row"><a href="https://staff.am/blog/">View training packages</a></div>
+                    <div class="footer_row"><a href="https://staff.am/en/privacy-policy">View all companies</a></div>
+                </div>
+                <div class="footer_content">
+                    <div class="footer_row"><h3>Verify your<br> skills</h3></div>
+                    <div class="footer_row"><a href="https://staff.am/en/about">How to verify skills</a></div>
+                    <div class="footer_row"><a href="https://staff.am/en/how-we-work">Aptis English Testing</a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section class="copyright">
+        <div>
+            <i class="far fa-copyright"></i>
+            Copyright 2019 staff.am. all rights reserved.
+        </div>
+    </section>
+    <script src="js/main.js"></script>
+    <script src="js/pass_percent.js"></script>
+</body>
+</html>

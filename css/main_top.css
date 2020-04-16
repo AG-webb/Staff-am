@@ -1,0 +1,208 @@
+.text_centered {
+    text-align: center;
+}
+.featured {
+    padding: 40px 10px;
+}
+.featured h1 {
+    color: var(--main-color-green);
+    text-transform: uppercase;
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+.featured_container {
+    margin-bottom: 35px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+}
+.companies_box {
+    position: relative;
+    width: 350px;
+    padding: 0 0 20px 15px;
+    border: 1px solid #DDDDDD;
+    border-bottom: 2px solid var(--main-color-green);
+    box-shadow: 0 0 1px #666;
+}
+.company-image {
+    display: inline-block;
+    transform: translateY(-15px);
+    border: 1px solid #DDDDDD;
+    background: white;
+    padding: 5px;
+    background-origin: content-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 110px;
+    height: 110px;
+    z-index: 2;
+}
+.companies_box:nth-child(1) .company-image {
+    background-image: url("../img/id-bank.png");
+}
+.companies_box:nth-child(2) .company-image {
+    background-image: url("../img/titan.png");
+}
+.companies_box:nth-child(3) .company-image {
+    background-image: url("../img/dvd.png");
+}
+.company_about {
+    display: inline-block;
+    cursor: pointer;
+    transform: translateY(-25px);
+    width: 178px;
+}
+.company_about h4 {
+    font-weight: normal;
+}
+.company_about span {
+    display: block;
+    font-size: 12px;
+}
+.company_about span:nth-child(2) {
+    color: var(--main-color-green);
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.company_about span:nth-child(3) i {
+    color: var(--main-color-green);
+}
+.text-container {
+    padding: 15px 15px 50px 0;
+    min-height: 200px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+.view_btn {
+    width: 87px;
+    text-align: center;
+    padding: 7.5px 0;
+    border:1px solid var(--main-color-green);
+    color: var(--main-color-green);
+    background: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+.view_btn:hover {
+    background: var(--main-color-green);
+    color: white;
+}
+.creating_container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    background: #FBFBFB;
+}
+.creating_img img{
+    width: 100%;
+    height: auto;
+}
+.creating_text {
+    margin-left: 30px;
+    width: 595px;
+}
+.creating_text h1 {
+    margin-top: 0;
+    font-size: 36px;
+    color: var(--main-color-green);
+    text-transform: uppercase;
+}
+.creating_text span {
+    display: block;
+    color: #666;
+    font-weight: 500;
+    line-height: 2;
+}
+.creating_text span:nth-child(2) {
+    margin-bottom: 15px;
+}
+.creating_span::before {
+    content: "- ";
+    color: #666;
+}
+.create_cv {
+    margin-top: 35px;
+    background: var(--main-color-green);
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid var(--main-color-green);
+    font-size: 18px;
+    cursor: pointer;
+}
+.create_cv:hover {
+    background: white;
+    color: var(--main-color-green);
+}
+@media (max-width: 1200px) {
+    .companies_box {
+        width: 290px;
+    }
+    .company_about {
+        width: 100%;
+        text-align: center;
+    }
+    .creating_img {
+        width: 455px;
+    }
+    .creating_text {
+        width: 470px;
+    }
+}
+@media (max-width: 992px) {
+    .featured_container {
+        grid-template-columns: auto auto;
+    }
+    .companies_box:nth-child(3) {
+        display: none;
+    }
+    .creating_container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .creating_text {
+        width: unset;
+        margin: 0;
+    }
+    .creating_img {
+        width: 720px;
+    }
+    .creating_img img {
+        width: 85%;
+    }
+}
+@media (max-width: 768px) {
+    .featured_container {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+    }
+    .companies_box {
+        width: unset;
+        text-align: center;
+    }
+    .text-container {
+        text-align: left !important;
+    }
+    .creating_container {
+        padding: 50px 15px;
+    }
+    .creating_img {
+        display: none;
+    }
+    .create_cv {
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .featured_container {
+        grid-template-columns: 1fr;
+        padding: 0 30px;
+    }
+    .companies_box:nth-child(2) {
+        display: none;
+    }
+}
